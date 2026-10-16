@@ -2,16 +2,51 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>じろうのアプリ</title>
+    <title>じろうのおみくじアプリ</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+        #result {
+            font-size: 48px;
+            margin: 20px;
+            color: #ff4500;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <h1 id="message">こんにちは！</h1>
-    <button onclick="changeText()">ボタンを押してね</button>
+
+    <h1>今日の運勢は……？</h1>
+    <div id="result">？？？</div>
+    <button onclick="drawOmikuji()">おみくじを引く！</button>
 
     <script>
-        function changeText() {
-            document.getElementById('message').innerText = 'アプリへようこそ！';
+        function drawOmikuji() {
+            // おみくじの結果のリスト
+            const results = ["大吉", "中吉", "小吉", "吉", "凶"];
+            
+            // リストの中からランダムに1つ選ぶ
+            const randomIndex = Math.floor(Math.random() * results.length);
+            const selectedResult = results[randomIndex];
+
+            // 画面の結果を表示する部分を書き換える
+            document.getElementById('result').innerText = selectedResult;
         }
     </script>
+
 </body>
 </html>
