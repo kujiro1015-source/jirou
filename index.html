@@ -5,7 +5,13 @@
     <title>じろうのアプリ</title>
 </head>
 <body>
-    <h1>こんにちは！</h1>
-    <p>GitHubとVS Codeで作った初めてのページです。</p>
+    <h1 id="message">こんにちは！</h1>
+    <button onclick="changeText()">ボタンを押してね</button>
+
+    <script>
+        function changeText() {
+            document.getElementById('message').innerText = 'アプリへようこそ！';
+        }
+    </script>
 </body>
 </html>
